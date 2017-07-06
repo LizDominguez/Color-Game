@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Vast+Shadow|Roboto');
+
+html, body {
+  margin: 0%;
+  padding: 0%; 
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+h1 {
+  text-align: center;
+  font: 4em 'Vast Shadow';
+  margin: 0em;
+}
+
+#color-heading {
+  font-size: 2em; 
+}
+
+h2 {
+  font-size: 1.5em;
+  width: 33%;
+  display: inline-block;
+  font-family: 'Roboto';
+}
+
+#new-colors {
+  text-align: right;
+}
+
+#try-again {
+  text-align: center;
+}
+
+.difficulty {
+  text-align: left;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.color {
+  width: 30%;
+  padding-bottom: 30%;
+  float: left;
+  margin: 1.66%;
+  border-radius: 25px;
+}
