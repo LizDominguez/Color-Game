@@ -1,41 +1,52 @@
 @import url('https://fonts.googleapis.com/css?family=Vast+Shadow|Roboto');
 
 html, body {
-  margin: 0%;
-  padding: 0%; 
-  height: 100%;
-  width: 100%;
-  min-height: 100%;
-  min-width: 100%;
+  margin: 0;
+  padding: 0; 
+}
+
+body {
+   background-color: #fafafa;
+}
+
+.heading {
+  background-color: #ffffff;
 }
 
 h1 {
   text-align: center;
-  font: 4em 'Vast Shadow';
-  margin: 0em;
+  font: 5vw 'Vast Shadow';
+  color:#242424;
+  margin: 0;
 }
 
 #color-heading {
-  font-size: 2em; 
+  font: 6vw; 
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.50, #2f2),color-stop(0.5, #2f2), color-stop(0.55, #ff2), color-stop(.8, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.50, #2f2),color-stop(0.5, #2f2), color-stop(0.55, #ff2), color-stop(.8, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.options {
+  color: #ffffff;
+  background-color: #242424;
+  font-family: 'Roboto'; 
+  margin: 12px 0em 12px 0em;
+  text-align: center;
+  padding: 1em 0em 1em 0em;
 }
 
 h2 {
-  font-size: 1.5em;
-  width: 33%;
+  font-size: 20px;
   display: inline-block;
-  font-family: 'Roboto';
-}
-
-#new-colors {
-  text-align: right;
+  margin: auto;
 }
 
 #try-again {
-  text-align: center;
-}
-
-.difficulty {
-  text-align: left;
+  margin-left: 6vw;
+  margin-right: 6vw;
 }
 
 .container {
@@ -48,5 +59,11 @@ h2 {
   padding-bottom: 30%;
   float: left;
   margin: 1.66%;
-  border-radius: 25px;
+  border-radius: 90px;
+}
+
+.selected {
+  color: #242424;
+  background-color: #ffffff;
+  padding: 20px 10px 16px 10px;
 }
