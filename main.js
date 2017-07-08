@@ -1,34 +1,54 @@
 /*jslint browser: true*/
 /*global $, jQuery*/
 
-  
-var colors = generateColors(6);
-   
+var numCircles = 6; 
+var colors = generateColors(numCircles);   
 var circles = document.querySelectorAll(".color");
 var pickedColor = pickColor();
 var colorDisplay = document.querySelector("#colorHeading");
 var messageDisplay = document.getElementById("tryAgain");
 colorDisplay.textContent = pickedColor;
 var newColors = document.getElementById("newColors");
-<<<<<<< HEAD
-var resetBtn = document.querySelector("#newColors");
-var mode = document.querySelectorAll(".difficulty");
-hardMode.classList.add("selected");
+var reset = document.querySelector("#newColors");
+var easy = document.querySelector("#easyMode");
+var hard = document.querySelector("#hardMode");
+hard.classList.add("selected");
 
-for (var i = 0; i < mode.length; i++){
-  mode[i].addEventListener("click", function(){
-    mode[0].classList.remove("selected");
-    mode[1].classList.remove("selected");
-    this.classList.add("selected");  
+easy.addEventListener("click", function(){
+  easy.classList.add("selected");                   
+  hard.classList.remove("selected");
+  numCircles = 3;
+  colors = generateColors(numCircles);
+  pickedColor = pickColor();
+  colorDisplay = pickedColor;
+  
+  for (var i = 0; i < circles.length; i++) {
     
-    this.textContent === "Easy" ? numCircles = 3: numCircles = 6;
+    if(colors[i]){
+      circles[i].style.backgroundColor = colors[i]; 
+    }
     
-    reset();
+   else circles[i].style.display = "none";
     
-  });
-}
+  } 
+});
 
-function reset(){
+hard.addEventListener("click", function(){
+    hard.classList.add("selected");               
+    easy.classList.remove("selected");
+    numCircles = 6;
+    colors = generateColors(numCircles);
+    pickedColor = pickColor();
+    colorDisplay = pickedColor;
+  
+  for (var i = 0; i < circles.length; i++) {
+    circles[i].style.backgroundColor = colors[i]; 
+    circles[i].style.display = "block";
+  }
+    
+});
+
+reset.addEventListener("click", function(){
   //generates new colors & picks new random color
   colors = generateColors(numCircles); 
   pickedColor = pickColor();
@@ -38,21 +58,11 @@ function reset(){
   
   for(var i = 0; i < circles.length; i++){
   //add initial colors
-    if(colors[i]){
-      circles[i].style.display = "block"; 
-      circles[i].style.backgroundColor = colors[i]; 
-    }
-    else circles[i].style.display = "none";
+    circles[i].style.backgroundColor = colors[i];
   }
-  
-}
-
-resetBtn.addEventListener("click", function(){
-  reset();                    
+                      
 });
 
-=======
->>>>>>> parent of dee62de... easy/hard mode
 
 for(var i = 0; i < circles.length; i++){
   //add initial colors
@@ -67,18 +77,16 @@ for(var i = 0; i < circles.length; i++){
     if (clickedColor === pickedColor) {
       messageDisplay.textContent = "Correct!";
       changeColors(pickedColor);
+      reset.textContent = "Play Again?";
     }
     
     else {
       //will make wrong colors disappear
-<<<<<<< HEAD
       this.style.backgroundColor = "#ebebeb";
+      messageDisplay.textContent = "Try Again"; 
       this.style.transition = "background-color 0.3s";
-=======
-      this.style.backgroundColor = "#fafafa";
->>>>>>> parent of dee62de... easy/hard mode
-      messageDisplay.textContent = "Try Again";  
          }
+    
   });
 }
 
@@ -118,6 +126,3 @@ function randomColor() {
   return "rgb(" + r + ", " + g + ", " + b + ")";
   
 }
-
-
-

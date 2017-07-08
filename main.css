@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-   background-color: #fafafa;
+   background-color: #ebebeb;
 }
 
 .heading {
@@ -20,13 +20,13 @@ h1 {
   text-align: center;
   font: 5vw 'Vast Shadow';
   color:#242424;
-  margin: 0 auto;
+  margin: 0;
 }
 
 #colorHeading {
   font: 6vw; 
-  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff),color-stop(0.5, #2f2), color-stop(0.60, #ff2), color-stop(.8, #f22) );
-  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff),color-stop(0.5, #2f2), color-stop(0.60, #ff2), color-stop(.8, #f22) );
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.50, #2f2),color-stop(0.5, #2f2), color-stop(0.55, #ff2), color-stop(.8, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.50, #2f2),color-stop(0.5, #2f2), color-stop(0.55, #ff2), color-stop(.8, #f22) );
   color:transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -38,15 +38,16 @@ h1 {
   color: #ffffff;
   background-color: #242424;
   font-family: 'Roboto'; 
-  margin: 0px 0px 12px 0px;
+  margin: 12px 0px 12px 0px;
   text-align: center;
+  padding: 16px 0px 16px 0px;
 }
 
 h2 {
   font-size: 20px;
   display: inline-block;
   margin: 0 auto;
-  width: 15%;
+  width: 150px;
 }
 
 h2:last-child {
@@ -54,30 +55,21 @@ h2:last-child {
   margin-left: -10px;
 }
 
-h2:first-child {
-  margin: 0px 100px 0px 110px;
-}
-
 #newColors:hover {
   color: #242424;
   background-color: #ffffff;
-<<<<<<< HEAD
-  padding: 20px 10px 20px 10px;
-  cursor: pointer;
+  padding: 20px 10px 16px 10px;
+  cursor:pointer;
   transition: color .3s, background-color .3s;
   -webkit-transition: color .3s, background-color .3s; 
   -moz-transition: color .3s, background-color .3s; 
-=======
-  padding: 20px 10px 16px 10px;
->>>>>>> parent of dee62de... easy/hard mode
 }
 
 #tryAgain {
-  display: inline-block;
-  width: 20%;
+  margin-left: 6vw;
+  margin-right: 6vw;
 }
 
-<<<<<<< HEAD
 .difficulty {
   cursor:pointer;
 }
@@ -85,11 +77,9 @@ h2:first-child {
 .selected {
   color: #242424;
   background-color: #ffffff;
-  padding: 20px 0px 20px 0px;
+  padding: 20px 10px 16px 10px;
 }
 
-=======
->>>>>>> parent of dee62de... easy/hard mode
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -110,11 +100,6 @@ h2:first-child {
   transform: scale(1.1);
 }
 
-.selected {
-  color: #242424;
-  background-color: #ffffff;
-  padding: 20px 10px 16px 10px;
-}
 
 @media only screen and (max-width: 600px) {
   
@@ -122,9 +107,8 @@ h2:first-child {
     font: 30px 'Vast Shadow';
   }
   
- h2 {
+  h2 {
       width: 100px;
       font-size: 15px;
     }
-  
 }
