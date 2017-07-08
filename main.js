@@ -1,14 +1,16 @@
 /*jslint browser: true*/
 /*global $, jQuery*/
 
-var numCircles = 6; 
-var colors = generateColors(numCircles);   
+  
+var colors = generateColors(6);
+   
 var circles = document.querySelectorAll(".color");
 var pickedColor = pickColor();
 var colorDisplay = document.querySelector("#colorHeading");
 var messageDisplay = document.getElementById("tryAgain");
 colorDisplay.textContent = pickedColor;
 var newColors = document.getElementById("newColors");
+<<<<<<< HEAD
 var resetBtn = document.querySelector("#newColors");
 var mode = document.querySelectorAll(".difficulty");
 hardMode.classList.add("selected");
@@ -49,6 +51,8 @@ resetBtn.addEventListener("click", function(){
   reset();                    
 });
 
+=======
+>>>>>>> parent of dee62de... easy/hard mode
 
 for(var i = 0; i < circles.length; i++){
   //add initial colors
@@ -63,13 +67,16 @@ for(var i = 0; i < circles.length; i++){
     if (clickedColor === pickedColor) {
       messageDisplay.textContent = "Correct!";
       changeColors(pickedColor);
-      reset.textContent = "Play Again?";
     }
     
     else {
       //will make wrong colors disappear
+<<<<<<< HEAD
       this.style.backgroundColor = "#ebebeb";
       this.style.transition = "background-color 0.3s";
+=======
+      this.style.backgroundColor = "#fafafa";
+>>>>>>> parent of dee62de... easy/hard mode
       messageDisplay.textContent = "Try Again";  
          }
   });
