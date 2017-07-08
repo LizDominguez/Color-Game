@@ -9,57 +9,44 @@ var colorDisplay = document.querySelector("#colorHeading");
 var messageDisplay = document.getElementById("tryAgain");
 colorDisplay.textContent = pickedColor;
 var newColors = document.getElementById("newColors");
-var reset = document.querySelector("#newColors");
-var easy = document.querySelector("#easyMode");
-var hard = document.querySelector("#hardMode");
-hard.classList.add("selected");
+var resetBtn = document.querySelector("#newColors");
+var mode = document.querySelectorAll(".difficulty");
+hardMode.classList.add("selected");
 
-easy.addEventListener("click", function(){
-  easy.classList.add("selected");                   
-  hard.classList.remove("selected");
-  numCircles = 3;
-  colors = generateColors(numCircles);
-  pickedColor = pickColor();
-  colorDisplay = pickedColor;
-  
-  for (var i = 0; i < circles.length; i++) {
+for (var i = 0; i < mode.length; i++){
+  mode[i].addEventListener("click", function(){
+    mode[0].classList.remove("selected");
+    mode[1].classList.remove("selected");
+    this.classList.add("selected");  
     
-    if(colors[i]){
-      circles[i].style.backgroundColor = colors[i]; 
-    }
+    this.textContent === "Easy" ? numCircles = 3: numCircles = 6;
     
-   else circles[i].style.display = "none";
+    reset();
     
-  } 
-});
+  });
+}
 
-hard.addEventListener("click", function(){
-    hard.classList.add("selected");               
-    easy.classList.remove("selected");
-    numCircles = 6;
-    colors = generateColors(numCircles);
-    pickedColor = pickColor();
-    colorDisplay = pickedColor;
-  
-  for (var i = 0; i < circles.length; i++) {
-    circles[i].style.backgroundColor = colors[i]; 
-    circles[i].style.display = "block";
-  }
-    
-});
-
-reset.addEventListener("click", function(){
+function reset(){
   //generates new colors & picks new random color
   colors = generateColors(numCircles); 
   pickedColor = pickColor();
   colorDisplay.textContent = pickedColor;
   reset.textContent = "New Colors";
+  messageDisplay.textContent = " ";
   
   for(var i = 0; i < circles.length; i++){
   //add initial colors
-    circles[i].style.backgroundColor = colors[i];
+    if(colors[i]){
+      circles[i].style.display = "block"; 
+      circles[i].style.backgroundColor = colors[i]; 
+    }
+    else circles[i].style.display = "none";
   }
-                      
+  
+}
+
+resetBtn.addEventListener("click", function(){
+  reset();                    
 });
 
 
@@ -82,9 +69,9 @@ for(var i = 0; i < circles.length; i++){
     else {
       //will make wrong colors disappear
       this.style.backgroundColor = "#ebebeb";
+      this.style.transition = "background-color 0.3s";
       messageDisplay.textContent = "Try Again";  
          }
-    
   });
 }
 
