@@ -1,15 +1,67 @@
 /*jslint browser: true*/
 /*global $, jQuery*/
 
-  
-var colors = generateColors(6);
-   
+var numCircles = 6; 
+var colors = generateColors(numCircles);   
 var circles = document.querySelectorAll(".color");
 var pickedColor = pickColor();
 var colorDisplay = document.querySelector("#colorHeading");
 var messageDisplay = document.getElementById("tryAgain");
 colorDisplay.textContent = pickedColor;
 var newColors = document.getElementById("newColors");
+var reset = document.querySelector("#newColors");
+var easy = document.querySelector("#easyMode");
+var hard = document.querySelector("#hardMode");
+hard.classList.add("selected");
+
+easy.addEventListener("click", function(){
+  easy.classList.add("selected");                   
+  hard.classList.remove("selected");
+  numCircles = 3;
+  colors = generateColors(numCircles);
+  pickedColor = pickColor();
+  colorDisplay = pickedColor;
+  
+  for (var i = 0; i < circles.length; i++) {
+    
+    if(colors[i]){
+      circles[i].style.backgroundColor = colors[i]; 
+    }
+    
+   else circles[i].style.display = "none";
+    
+  } 
+});
+
+hard.addEventListener("click", function(){
+    hard.classList.add("selected");               
+    easy.classList.remove("selected");
+    numCircles = 6;
+    colors = generateColors(numCircles);
+    pickedColor = pickColor();
+    colorDisplay = pickedColor;
+  
+  for (var i = 0; i < circles.length; i++) {
+    circles[i].style.backgroundColor = colors[i]; 
+    circles[i].style.display = "block";
+  }
+    
+});
+
+reset.addEventListener("click", function(){
+  //generates new colors & picks new random color
+  colors = generateColors(numCircles); 
+  pickedColor = pickColor();
+  colorDisplay.textContent = pickedColor;
+  reset.textContent = "New Colors";
+  
+  for(var i = 0; i < circles.length; i++){
+  //add initial colors
+    circles[i].style.backgroundColor = colors[i];
+  }
+                      
+});
+
 
 for(var i = 0; i < circles.length; i++){
   //add initial colors
@@ -24,11 +76,12 @@ for(var i = 0; i < circles.length; i++){
     if (clickedColor === pickedColor) {
       messageDisplay.textContent = "Correct!";
       changeColors(pickedColor);
+      reset.textContent = "Play Again?";
     }
     
     else {
       //will make wrong colors disappear
-      this.style.backgroundColor = "#fafafa";
+      this.style.backgroundColor = "#ebebeb";
       messageDisplay.textContent = "Try Again";  
          }
     

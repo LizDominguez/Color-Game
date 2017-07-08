@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-   background-color: #fafafa;
+   background-color: #ebebeb;
 }
 
 .heading {
@@ -59,11 +59,22 @@ h2:last-child {
   color: #242424;
   background-color: #ffffff;
   padding: 20px 10px 16px 10px;
+  cursor:pointer;
 }
 
 #tryAgain {
   margin-left: 6vw;
   margin-right: 6vw;
+}
+
+.difficulty {
+  cursor:pointer;
+}
+
+.selected {
+  color: #242424;
+  background-color: #ffffff;
+  padding: 20px 10px 16px 10px;
 }
 
 .container {
@@ -85,11 +96,6 @@ h2:last-child {
   transition: transform 1s;
 }
 
-.selected {
-  color: #242424;
-  background-color: #ffffff;
-  padding: 20px 10px 16px 10px;
-}
 
 @media only screen and (max-width: 600px) {
   
