@@ -7,14 +7,20 @@ var circles = document.querySelectorAll(".color");
 var pickedColor = pickColor();
 var colorDisplay = document.querySelector("#colorHeading");
 var messageDisplay = document.getElementById("tryAgain");
-colorDisplay.textContent = pickedColor;
 var newColors = document.getElementById("newColors");
 var reset = document.querySelector("#newColors");
 var easy = document.querySelector("#easyMode");
 var hard = document.querySelector("#hardMode");
-hard.classList.add("selected");
 
-easy.addEventListener("click", function(){
+
+init();
+
+function init(){
+  
+  colorDisplay.textContent = pickedColor;
+  hard.classList.add("selected");
+  
+  easy.addEventListener("click", function(){
   easy.classList.add("selected");                   
   hard.classList.remove("selected");
   numCircles = 3;
@@ -47,6 +53,10 @@ hard.addEventListener("click", function(){
   }
     
 });
+
+  
+}
+
 
 reset.addEventListener("click", function(){
   //generates new colors & picks new random color
